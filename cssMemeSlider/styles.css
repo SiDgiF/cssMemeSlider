@@ -12,7 +12,7 @@ body {
 }
 .slides {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
   width: 400%; /* ширина равна 4 слайдам (100% x 4) */
 }
 .slide {
@@ -41,7 +41,7 @@ body {
 
 .text-slides {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
   width: 400%;
 }
 
