@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.slider {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 400%; /* ширина равна 4 слайдам (100% x 4) */
+}
+.slide {
+  flex: 0 0 25%; /* каждый слайд занимает 100% ширины контейнера */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.text-slides__wrapper {
+  display: flex;
+
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.text-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 400%;
+}
+
+.text-slide {
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  flex: 0 0 100%;
+  /* box-sizing: border-box; */
+  /* overflow: hidden; */
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-btn {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #999;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+
+#slide3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+
+#slide4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+#slide1:checked ~ .wrapper .text-slides {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .wrapper .text-slides {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .wrapper .text-slides {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .wrapper .text-slides {
+  transform: translateX(-300%);
+}
