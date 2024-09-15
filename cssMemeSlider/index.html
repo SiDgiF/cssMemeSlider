@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider</title>
+    <title>CSS Meme Slider</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,6 @@
         <input type="radio" name="slider" id="slide2">
         <input type="radio" name="slider" id="slide3">
         <input type="radio" name="slider" id="slide4">
-
 
         <div class="slides">
             <div class="slide">
@@ -25,32 +24,27 @@
                 <img src="./assets/button.png" alt="Image 3">
             </div>
             <div class="slide">
-                <img src="./assets/super.jpeg" alt="Image 4">
+                <img src="./assets/super.png" alt="Image 4">
             </div>
         </div>
 
-
         <div class="wrapper">
+            <div class="text-slides__wrapper">
+                <div class="text-slides">
+                    <div class="text-slide">Жизнь удалась! Наконец-то слайдер работает без багов.</div>
+                    <div class="text-slide">Когда работаешь над проектом всю ночь...</div>
+                    <div class="text-slide">Когда обновление кода ломает всю прошлую работу.</div>
+                    <div class="text-slide">Когда находишь баг в коде за пару секунд.</div>
+                </div>
+            </div>
 
-        <div class="text-slides__wrapper">
-
-        <div class="text-slides">
-            <div class="text-slide">Жизнь удалась! Наконец-то слайдер работает без багов</div>
-            <div class="text-slide">Когда работаешь над проектом всю ночь</div>
-            <div class="text-slide">Когда обновление кода ломает всю версию.</div>
-            <div class="text-slide">Когда находишь баг в коде за пару секунд</div>
+            <div class="nav">
+                <label for="slide1" class="nav-btn"></label>
+                <label for="slide2" class="nav-btn"></label>
+                <label for="slide3" class="nav-btn"></label>
+                <label for="slide4" class="nav-btn"></label>
+            </div>
         </div>
-
-        </div>
-
-        <div class="nav">
-            <label for="slide1" class="nav-btn"></label>
-            <label for="slide2" class="nav-btn"></label>
-            <label for="slide3" class="nav-btn"></label>
-            <label for="slide4" class="nav-btn"></label>
-        </div>
-        </div>
-
     </div>
 </body>
 </html>

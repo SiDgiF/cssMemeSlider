@@ -1,91 +1,127 @@
 /* Подключаем Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
 
+html,
 body {
-  margin: 50px;
-  padding: 0;
-  font-family: "Roboto", sans-serif; /* Используем шрифт Roboto */
-  background: linear-gradient(to right, #1c141409, #0c07077a); /* Градиентный фон */
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #0c07077a;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh; /* Устанавливаем минимальную высоту равной высоте экрана */
+  height: 100vh; /* Высота на 100% экрана */
+  margin: 0;
 }
 
 .slider {
-  width: 100%;
-  max-width: 800px;
+  width: 75vw; /* 80% от ширины экрана */
+  max-width: 75vh; /* Максимальная ширина ограничена высотой экрана */
+  height: auto; /* Автоматическая высота */
   overflow: hidden;
-  border-radius: 10px; /* Закругленные углы */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для слайдера */
+
+  background-color: #fff;
+  margin: auto;
 }
 
 .slides {
   display: flex;
   transition: transform 0.3s ease;
-  width: 400%; /* ширина равна 4 слайдам (100% x 4) */
+  width: 400%; /* Ширина равна 4 слайдам (100% x 4) */
+  background: #0c07077a;
 }
 
 .slide {
-  flex: 0 0 25%; /* каждый слайд занимает 100% ширины контейнера */
+  flex: 0 0 25%; /* Каждый слайд занимает 25% ширины контейнера */
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 2rem; /* Закругленные углы в rem */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .slide img {
-  width: 100%;
+  width: 100%; /* Картинка растягивается на всю ширину слайда */
+  height: auto;
   display: block;
+  border-radius: 2rem; /* Закругленные углы в rem */
+  overflow: hidden;
 }
 
 .wrapper {
   display: flex;
-  /* gap: 50px; */
+  background: #0c07077a;
 }
 
 .text-slides__wrapper {
   display: flex;
   width: 100%;
-  max-width: 800px;
+  max-width: 80vw; /* Максимальная ширина текстового слайда — 80% ширины экрана */
   overflow: hidden;
+  /* background: #0c07077a; */
 }
 
 .text-slides {
   display: flex;
   transition: transform 0.3s ease;
   width: 400%;
+  /* background: #0c07077a; */
 }
 
 .text-slide {
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  box-sizing: border-box;
   flex: 0 0 100%;
   text-align: center;
-  padding: 20px; /* Отступы вокруг текста */
-  font-family: "Open Sans", sans-serif; /* Используем шрифт Open Sans для текста */
-  background: #fff; /* Белый фон для текста */
+  padding: 0.5rem;
+  /* background: #fff; */
+  /* background: #0c07077a; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 }
 
-.nav {
+/* .nav {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 1rem;
   align-items: center;
+
 }
 
 .nav-btn {
-  width: 20px;
-  height: 20px;
-  background-color: #ccc;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(90, 90, 209);
   border-radius: 50%;
-  margin: 0 5px;
+  margin: 0 0.5rem;
   cursor: pointer;
   transition:
     background-color 0.3s,
     transform 0.3s;
+  border: none;
 }
 
 .nav-btn:hover {
-  background-color: #999;
+  background-color: white;
 }
+
+.nav-btn:active {
+  background-color: grey;
+}
+
+input[type="radio"]:checked + .nav-btn {
+  background-color: transparent;
+  border: 0.1rem solid blue;
+}
+
+input[type="radio"]:not(:checked) + .nav-btn {
+  background-color: blue;
+} */
+
+/* ********************************************** */
 
 input[type="radio"] {
   display: none;
@@ -121,4 +157,94 @@ input[type="radio"] {
 
 #slide4:checked ~ .wrapper .text-slides {
   transform: translateX(-300%);
+}
+
+/* ************************************************ */
+/* .nav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  align-items: center;
+}
+
+.nav-btn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  border: 0.15rem solid blue;
+  background-color: transparent;
+
+.nav-btn:hover {
+  background-color: white;
+}
+
+.nav-btn:active {
+  background-color: grey;
+}
+
+input[type="radio"]:checked + .nav-btn {
+  background-color: transparent;
+  border: 0.1rem solid blue;
+}
+
+input[type="radio"]:not(:checked) + .nav-btn {
+  background-color: blue;
+} */
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  align-items: center;
+}
+
+.nav-btn {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  /* border: 0.1rem solid blue; */
+  background-color: transparent;
+  background-color: blue;
+}
+
+.nav-btn:hover {
+  background-color: white; /* При наведении кружок становится белым */
+}
+
+.nav-btn:active {
+  background-color: rgba(74, 74, 74, 0.714); /* При нажатии кружок становится серым */
+}
+
+#slide1:checked ~ .nav .nav-btn:nth-child(1) {
+  background-color: transparent; /* Пустой кружок для первого слайда */
+  border: 0.1rem solid blue; /* Синий контур */
+}
+
+#slide2:checked ~ .nav .nav-btn:nth-child(2) {
+  background-color: transparent; /* Пустой кружок для второго слайда */
+  border: 0.1rem solid blue; /* Синий контур */
+}
+
+#slide3:checked ~ .nav .nav-btn:nth-child(3) {
+  background-color: transparent; /* Пустой кружок для третьего слайда */
+  border: 0.1rem solid blue; /* Синий контур */
+}
+
+#slide4:checked ~ .nav .nav-btn:nth-child(4) {
+  background-color: transparent; /* Пустой кружок для четвертого слайда */
+  border: 0.1rem solid blue; /* Синий контур */
+}
+
+input[type="radio"]:not(:checked) ~ .nav .nav-btn {
+  background-color: blue; /* Полный синий кружок для неактивных */
 }
