@@ -23,7 +23,7 @@ body {
   height: auto; /* Автоматическая высота */
   overflow: hidden;
 
-  background-color: #fff;
+  /* background-color: #fff; */
   margin: auto;
 }
 
@@ -31,7 +31,7 @@ body {
   display: flex;
   transition: transform 0.3s ease;
   width: 400%; /* Ширина равна 4 слайдам (100% x 4) */
-  background: #0c07077a;
+  /* background: #0c07077a; */
 }
 
 .slide {
@@ -52,7 +52,7 @@ body {
 
 .wrapper {
   display: flex;
-  background: #0c07077a;
+  /* background: #0c07077a; */
 }
 
 .text-slides__wrapper {
