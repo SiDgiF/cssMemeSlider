@@ -1,0 +1,182 @@
+/* Подключаем Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #0c07077a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider {
+  width: 75vw;
+  max-width: 75vh;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 400%;
+}
+
+.slide {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 825px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .text-slides__wrapper {
+    order: 2;
+  }
+}
+
+.text-slides__wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 80vw;
+  overflow: hidden;
+}
+
+.text-slides {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 400%;
+}
+
+.text-slide {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  word-break: break-word;
+}
+
+@media (max-width: 825px) {
+  .text-slide {
+    font-size: 1rem;
+  }
+}
+
+/* Управление слайдами */
+input[type="radio"] {
+  display: none;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+#slide4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+#slide1:checked ~ .wrapper .text-slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .wrapper .text-slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .wrapper .text-slides {
+  transform: translateX(-200%);
+}
+#slide4:checked ~ .wrapper .text-slides {
+  transform: translateX(-300%);
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  align-items: center;
+}
+
+.nav-btn {
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+.nav-dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #407bf9;
+  transition:
+    box-shadow 0.3s,
+    background-color 0.3s;
+  box-shadow: 0 0 0 0.1rem #407bf9;
+}
+
+input#slide1:checked ~ .wrapper .nav .nav-btn:nth-child(1) .nav-dot,
+input#slide2:checked ~ .wrapper .nav .nav-btn:nth-child(2) .nav-dot,
+input#slide3:checked ~ .wrapper .nav .nav-btn:nth-child(3) .nav-dot,
+input#slide4:checked ~ .wrapper .nav .nav-btn:nth-child(4) .nav-dot {
+  background-color: transparent;
+  box-shadow: 0 0 0 0.1rem #407bf9;
+}
+
+/* Наведение на активный контрол */
+input#slide1:checked ~ .wrapper .nav .nav-btn:nth-child(1):hover .nav-dot,
+input#slide2:checked ~ .wrapper .nav .nav-btn:nth-child(2):hover .nav-dot,
+input#slide3:checked ~ .wrapper .nav .nav-btn:nth-child(3):hover .nav-dot,
+input#slide4:checked ~ .wrapper .nav .nav-btn:nth-child(4):hover .nav-dot {
+  box-shadow: 0 0 0 0.1rem rgb(226, 204, 204); /* Эффект границы при наведении на активный кружок */
+}
+
+.nav-btn:hover .nav-dot {
+  background-color: rgb(226, 204, 204);
+  box-shadow: 0 0 0 0.1rem rgb(226, 204, 204);
+}
+
+.nav-btn:active .nav-dot {
+  background-color: gray;
+  box-shadow: 0 0 0 0.1rem gray;
+}
