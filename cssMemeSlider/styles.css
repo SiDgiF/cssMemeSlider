@@ -152,7 +152,7 @@ input[type="radio"] {
   transition:
     box-shadow 0.3s,
     background-color 0.3s;
-  box-shadow: 0 0 0 2px #407bf9;
+  box-shadow: 0 0 0 0.1rem #407bf9;
 }
 
 input#slide1:checked ~ .wrapper .nav .nav-btn:nth-child(1) .nav-dot,
@@ -160,7 +160,7 @@ input#slide2:checked ~ .wrapper .nav .nav-btn:nth-child(2) .nav-dot,
 input#slide3:checked ~ .wrapper .nav .nav-btn:nth-child(3) .nav-dot,
 input#slide4:checked ~ .wrapper .nav .nav-btn:nth-child(4) .nav-dot {
   background-color: transparent;
-  box-shadow: 0 0 0 2px #407bf9;
+  box-shadow: 0 0 0 0.1rem #407bf9;
 }
 
 /* Наведение на активный контрол */
@@ -168,15 +168,15 @@ input#slide1:checked ~ .wrapper .nav .nav-btn:nth-child(1):hover .nav-dot,
 input#slide2:checked ~ .wrapper .nav .nav-btn:nth-child(2):hover .nav-dot,
 input#slide3:checked ~ .wrapper .nav .nav-btn:nth-child(3):hover .nav-dot,
 input#slide4:checked ~ .wrapper .nav .nav-btn:nth-child(4):hover .nav-dot {
-  box-shadow: 0 0 0 2px rgb(226, 204, 204); /* Эффект границы при наведении на активный кружок */
+  box-shadow: 0 0 0 0.1rem rgb(226, 204, 204); /* Эффект границы при наведении на активный кружок */
 }
 
 .nav-btn:hover .nav-dot {
   background-color: rgb(226, 204, 204);
-  box-shadow: 0 0 0 2px rgb(226, 204, 204);
+  box-shadow: 0 0 0 0.1rem rgb(226, 204, 204);
 }
 
 .nav-btn:active .nav-dot {
   background-color: gray;
-  box-shadow: 0 0 0 2px gray;
+  box-shadow: 0 0 0 0.1rem gray;
 }
